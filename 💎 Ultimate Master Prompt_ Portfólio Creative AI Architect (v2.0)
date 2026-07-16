@@ -1,0 +1,72 @@
+# 💎 Ultimate Master Prompt: Portfólio Creative AI Architect (v2.0)
+
+Este documento é uma especificação técnica e artística de nível sênior. O objetivo é construir um portfólio que seja, em si mesmo, uma **prova de conceito** de que o autor é um **mestre em Inteligência Artificial com uma visão criativa disruptiva**. O design deve ecoar o minimalismo de Keita Yamada, mas a alma do site deve respirar inteligência computacional avançada.
+
+---
+
+## 👁️ 1. O Manifesto: Criatividade Através da Inteligência
+O portfólio não deve apenas *conter* projetos de IA; ele deve *ser* um sistema de IA. A criatividade deve ser transmitida pela **originalidade das interações**, e o conhecimento em IA pela **sofisticação da lógica invisível**.
+
+- **Regra de Ouro:** Se algo pode ser estático, torne-o generativo. Se algo pode ser um link, torne-o uma conversa inteligente.
+- **Estética:** "The Intelligent Void" — Um espaço minimalista onde cada pixel parece ter sido colocado por uma inteligência superior.
+
+---
+
+## 🧠 2. Demonstração Explícita de Conhecimento em IA
+
+Para transmitir autoridade técnica, o portfólio deve implementar as seguintes lógicas de forma visível:
+
+| Elemento | Lógica de IA Aplicada (O que isso prova?) |
+| :--- | :--- |
+| **Hero Background** | **Vector Space Visualization:** Partículas 3D que não apenas se movem, mas representam clusters de dados em um espaço latente. A interação do mouse simula um "search query" em tempo real. |
+| **Navegação** | **Semantic Routing:** A busca ou menu pode aceitar linguagem natural. "Mostre-me projetos de visão computacional" filtra os projetos instantaneamente. |
+| **Case Studies** | **Automated Insights:** Cada projeto tem um resumo gerado por IA que destaca o "Impacto vs. Complexidade", provando domínio de LLMs e sumarização. |
+| **Interatividade** | **Real-time Inference:** Experimentos que mostram inferência local ou via API com latência mínima, provando conhecimento de otimização e LLMOps. |
+
+---
+
+## 🎨 3. Transmissão de Criatividade (O Toque Yamada)
+
+A criatividade será transmitida pela **Direção de Arte** e pela **Experiência Sensorial**:
+
+- **Tipografia Reativa:** Títulos que se distorcem sutilmente ou mudam de peso conforme a "temperatura" ou o "sentimento" da interação atual.
+- **Som Generativo (Opcional/Sutil):** Pequenos bips ou frequências geradas em tempo real que acompanham as interações, criando uma atmosfera imersiva.
+- **Composição Assimétrica:** Uso de layouts que fogem do padrão Bootstrap/Grid comum, criando uma sensação de galeria de arte moderna.
+
+---
+
+## 🏗️ 4. Detalhamento dos Módulos (Especificação Técnica)
+
+### Módulo 1: Hero — "The Latent Canvas"
+- **Técnico:** Canvas Three.js ocupando 100% da viewport. Sistema de partículas instanciado para 10k+ pontos.
+- **Criativo:** O título `NAME | CREATIVE AI` aparece em uma animação de "decodificação" (glitch tipográfico suave).
+- **IA:** As partículas formam constelações baseadas em um modelo de *force-directed graph*. Elas reagem ao mouse não por física simples, mas por uma simulação de campos de atenção (Attention Mechanism).
+
+### Módulo 2: The Archive — "Semantic Gallery"
+- **Técnico:** Grid de projetos com carregamento via `Server Components`.
+- **Criativo:** Cada card de projeto é uma "janela" para um shader GLSL único que reflete a essência do projeto (ex: um projeto de áudio tem um shader de ondas; um de visão computacional tem um shader de detecção de bordas).
+- **IA:** Um botão "Talk to Project" que inicia um chat context-aware (RAG) treinado especificamente na documentação técnica daquele projeto.
+
+### Módulo 3: The Lab — "Real-time Playground"
+- **Técnico:** Integração com `Vercel AI SDK` e `Stream API`.
+- **Criativo:** Um espaço de "alquimia digital". O usuário fornece um input (texto ou imagem) e a IA o transforma em algo artístico (um haicai visual, uma forma geométrica complexa, etc.).
+- **IA:** Demonstração de *Multi-modalidade*. O sistema processa diferentes tipos de dados para gerar uma saída criativa única.
+
+### Módulo 4: The Graph — "Neural Map"
+- **Técnico:** Visualização de dados 3D usando `d3-force-3d` ou `react-force-graph-3d`.
+- **Criativo:** Um mapa de conexões que mostra como você pensa. Os nós são suas habilidades (ex: PyTorch, LangChain, UX Design).
+- **IA:** Os nós brilham e se conectam dinamicamente conforme o usuário explora temas, simulando o disparo de sinapses em uma rede neural.
+
+---
+
+## 🛠️ 5. Stack e Diretrizes para o Desenvolvedor
+
+- **Next.js 15 + React 19:** Use as últimas versões para mostrar que está na vanguarda tecnológica.
+- **R3F + Drei:** Use `Float`, `ContactShadows` e `Text3D` para profundidade.
+- **Shaders Customizados:** Escreva Shaders em GLSL para efeitos de pós-processamento (Bloom, Grain, Chromatic Aberration).
+- **LLMOps:** Implemente `caching` de respostas de IA para velocidade e economia de tokens.
+
+---
+
+## 📋 6. Instrução Final (Prompt para a IA)
+> "Crie um portfólio que seja uma obra de arte digital. Ele deve exalar **minimalismo japonês** na superfície e **poder computacional de IA** nas entranhas. Cada interação deve ser uma prova de que o autor domina a tecnologia e a utiliza para criar experiências que antes eram impossíveis. O site deve ser rápido, fluido e profundamente inteligente. Não aceite o comum; busque o extraordinário em cada pixel e em cada prompt de sistema."
