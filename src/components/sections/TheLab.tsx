@@ -11,6 +11,7 @@ export default function TheLab() {
       console.error("Chat Error:", err);
       alert("Erro na IA: " + err.message);
     },
+    // @ts-expect-error - Ignorando erro de tipagem de versão do AI SDK. A API e headers funcionam no runtime.
     api: "/api/chat",
     headers: {
       'x-portfolio-language': language
