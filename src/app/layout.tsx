@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Creative AI Architect",
-  description: "Portfólio de IA Criativa e Experiências Generativas",
+  title: "George Dandolini",
+  description: "Portfólio de engenharia de software e inteligência artificial.",
 };
 
 export default function RootLayout({
