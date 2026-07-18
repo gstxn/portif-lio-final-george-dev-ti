@@ -4,24 +4,12 @@ import { useLanguage } from "../../context/LanguageContext";
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Imersivo",
-    category: "Fullstack / 3D",
-    description: "Uma plataforma de e-commerce construída com Next.js, com visualização de produtos em 3D e renderização em tempo real.",
-    color: "#ff3366", // Reddish
-  },
-  {
-    id: 2,
-    title: "Design System Adaptativo",
-    category: "UI/UX",
-    description: "Um design system focado em micro-interações fluidas, com componentes que reagem dinamicamente ao comportamento do usuário.",
-    color: "#33ccff", // Cyan
-  },
-  {
-    id: 3,
-    title: "LLM Autonomous Agent",
-    category: "AI / Fullstack",
-    description: "Agente autônomo acoplado a um dashboard moderno em React, unindo o processamento cognitivo com uma UX limpa.",
-    color: "#cc33ff", // Purple
+    title: "Fiscal Middleware",
+    category: "Backend / Mensageria",
+    description: "Middleware de resiliência com .NET 9 e RabbitMQ para integrações tolerantes a falhas em alta volumetria.",
+    color: "#ff6600", // Orange
+    githubLink: "https://github.com/gstxn/fiscalmiddlewaredashboard",
+    liveLink: "https://fiscalmiddlewaredashboard.vercel.app/"
   }
 ];
 
@@ -49,7 +37,7 @@ export default function TheArchive() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 opacity-50 pointer-events-none grayscale">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((proj) => (
             <ProjectCard key={proj.id} {...proj} />
           ))}
