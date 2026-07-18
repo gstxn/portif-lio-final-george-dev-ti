@@ -81,6 +81,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
               background: "linear-gradient(135deg, transparent 45%, rgba(255,51,51,0.8) 48%, rgba(51,255,102,0.8) 52%, transparent 55%)",
               mixBlendMode: "screen",
             }}
+            initial={{ x: "-100%", opacity: 0 }}
             animate={beamControls}
           />
         </div>
