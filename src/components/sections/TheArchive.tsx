@@ -6,10 +6,11 @@ const projects = [
     id: 1,
     title: "Fiscal Middleware",
     category: "Backend / Mensageria",
-    description: "Middleware de resiliência com .NET 9 e RabbitMQ para integrações tolerantes a falhas em alta volumetria.",
+    description: "Sistema arquitetado para atuar como camada de resiliência e mensageria usando .NET 9 e RabbitMQ. Protege integrações síncronas contra falhas e timeouts em alta volumetria.",
     color: "#ff6600", // Orange
     githubLink: "https://github.com/gstxn/fiscalmiddlewaredashboard",
-    liveLink: "https://fiscalmiddlewaredashboard.vercel.app/"
+    liveLink: "https://fiscalmiddlewaredashboard.vercel.app/",
+    curiosity: "O pulso contínuo ao fundo representa o Worker em .NET, sempre 'vivo' e ouvindo. Ao passar o mouse, o feixe simula a jornada de uma mensagem no middleware: o tráfego caótico entra (vermelho), passa pelas regras de resiliência e sai validado no destino (verde)."
   }
 ];
 
