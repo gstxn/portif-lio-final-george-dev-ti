@@ -139,7 +139,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
       </AnimatePresence>
 
       {/* Content */}
-      <div className={`relative z-20 transition-transform duration-500 group-hover:-translate-y-2 ${showCuriosity ? 'translate-y-32 opacity-0' : 'translate-y-6 opacity-100'}`}>
+      <div className={`relative z-20 transition-transform duration-500 group-hover:-translate-y-4 ${showCuriosity ? 'translate-y-32 opacity-0' : 'translate-y-2 opacity-100'}`}>
         <p className="text-xs font-mono tracking-widest text-gray-500 uppercase mb-2">
           {category}
         </p>
