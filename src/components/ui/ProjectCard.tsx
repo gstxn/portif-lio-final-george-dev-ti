@@ -22,6 +22,9 @@ export default function ProjectCard({ title, category, description, color = "#ff
   const beamControls = useAnimation();
   const pipelineBeamControls = useAnimation();
 
+  const isFiscal = title === "Fiscal Middleware";
+  const isPipeline = title === "Pipeline Reativo de Arquivos Massivos";
+
   useEffect(() => {
     if (isHovered && !showCuriosity) {
       if (isFiscal) {
@@ -46,9 +49,6 @@ export default function ProjectCard({ title, category, description, color = "#ff
       }
     }
   }, [isHovered, beamControls, pipelineBeamControls, showCuriosity, isFiscal, isPipeline]);
-
-  const isFiscal = title === "Fiscal Middleware";
-  const isPipeline = title === "Pipeline Reativo de Arquivos Massivos";
 
   return (
     <motion.div
@@ -209,7 +209,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
             </div>
           ) : (
             <button
-              className="inline-flex items-center justify-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-6 py-3 hover:bg-white hover:text-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2.5 hover:bg-white hover:text-black transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
                 setShowOptions(true);
@@ -221,7 +221,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
           )
         ) : (
           <button
-            className="flex items-center justify-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-6 py-3 opacity-50 cursor-not-allowed"
+            className="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2.5 opacity-50 cursor-not-allowed"
             disabled
           >
             <span className="w-2 h-2 rounded-full bg-gray-500" />
