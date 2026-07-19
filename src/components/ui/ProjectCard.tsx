@@ -20,21 +20,35 @@ export default function ProjectCard({ title, category, description, color = "#ff
   const [showOptions, setShowOptions] = useState(false);
   const [showCuriosity, setShowCuriosity] = useState(false);
   const beamControls = useAnimation();
+  const pipelineBeamControls = useAnimation();
 
   useEffect(() => {
     if (isHovered && !showCuriosity) {
-      beamControls.start({
-        x: ["-100%", "100%"],
-        opacity: [0, 1, 1, 0],
-        transition: { duration: 1.2, ease: "easeInOut" }
-      });
+      if (isFiscal) {
+        beamControls.start({
+          x: ["-100%", "100%"],
+          opacity: [0, 1, 1, 0],
+          transition: { duration: 1.2, ease: "easeInOut" }
+        });
+      } else if (isPipeline) {
+        pipelineBeamControls.start({
+          top: ["-5%", "105%"],
+          opacity: [0, 1, 1, 0],
+          transition: { duration: 2.0, ease: [0.16, 1, 0.3, 1] }
+        });
+      }
     } else {
       // Instantly reset when not hovered
-      beamControls.set({ x: "-100%", opacity: 0 });
+      if (isFiscal) {
+        beamControls.set({ x: "-100%", opacity: 0 });
+      } else if (isPipeline) {
+        pipelineBeamControls.set({ top: "-5%", opacity: 0 });
+      }
     }
-  }, [isHovered, beamControls, showCuriosity]);
+  }, [isHovered, beamControls, pipelineBeamControls, showCuriosity, isFiscal, isPipeline]);
 
   const isFiscal = title === "Fiscal Middleware";
+  const isPipeline = title === "Pipeline Reativo de Arquivos Massivos";
 
   return (
     <motion.div
@@ -87,6 +101,22 @@ export default function ProjectCard({ title, category, description, color = "#ff
             initial={{ x: "-100%", opacity: 0 }}
             animate={beamControls}
           />
+        </div>
+      )}
+
+      {/* Data Matrix Slicing Laser Beam (Only for Pipeline Reativo) */}
+      {isPipeline && (
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute left-0 w-full h-[4px]"
+            initial={{ top: "-5%", opacity: 0 }}
+            animate={pipelineBeamControls}
+          >
+            {/* Linha principal mais viva */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-300 to-transparent blur-[2px] opacity-100" />
+            {/* Núcleo super brilhante (Hotspot) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[3px] bg-white blur-[2px] opacity-100 shadow-[0_0_25px_6px_rgba(0,255,255,0.7)]" />
+          </motion.div>
         </div>
       )}
 
