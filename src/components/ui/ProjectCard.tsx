@@ -44,6 +44,9 @@ export default function ProjectCard({ title, category, description, color = "#ff
         borderColor: "rgba(255, 51, 51, 0.15)",
         boxShadow: "0px 0px 30px 0px rgba(255, 51, 51, 0.1)",
         transition: { duration: 0.3 }
+      } : isPipeline ? {
+        borderColor: "rgba(0, 102, 255, 0.25)",
+        transition: { duration: 0.3 }
       } : {
         borderColor: "rgba(100, 100, 100, 0.3)",
         transition: { duration: 0.3 }
@@ -58,13 +61,13 @@ export default function ProjectCard({ title, category, description, color = "#ff
       {/* 3D Shader Background / Asset Container with Heartbeat & Hover Activation */}
       <motion.div
         className="absolute inset-0 z-0 origin-center"
-        initial={{ scale: 1, opacity: 0.85, filter: "brightness(1)" }}
+        initial={{ scale: 1, rotate: 0, opacity: 0.85, filter: "brightness(1)" }}
         animate={
           isHovered
-            ? { scale: 1.05, opacity: 1, filter: "brightness(1.2)", transition: { duration: 0.4, ease: "easeOut" } }
+            ? { scale: isPipeline ? 1.04 : 1.05, rotate: isPipeline ? 2 : 0, opacity: 1, filter: "brightness(1.2)", transition: { duration: isPipeline ? 0.6 : 0.4, ease: isPipeline ? [0.16, 1, 0.3, 1] : "easeOut" } }
             : isFiscal
-              ? { scale: [1, 1.02, 1], opacity: [0.85, 1, 0.85], transition: { duration: 4, repeat: Infinity, ease: "easeInOut" } }
-              : { scale: 1, opacity: 0.85 }
+              ? { scale: [1, 1.02, 1], rotate: 0, opacity: [0.85, 1, 0.85], transition: { duration: 4, repeat: Infinity, ease: "easeInOut" } }
+              : { scale: 1, rotate: 0, opacity: 0.85 }
         }
       >
         <Canvas camera={{ position: [0, 0, 5] }}>
@@ -156,7 +159,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
                   href={githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex justify-center items-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-2 py-2 hover:bg-white hover:text-black transition-colors"
+                  className="flex-1 flex justify-center items-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-3 hover:bg-white hover:text-black transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   GitHub
@@ -167,7 +170,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
                   href={liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex justify-center items-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-2 py-2 hover:bg-white hover:text-black transition-colors"
+                  className="flex-1 flex justify-center items-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-3 hover:bg-white hover:text-black transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   Live Demo
@@ -176,7 +179,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
             </div>
           ) : (
             <button
-              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 hover:bg-white hover:text-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-6 py-3 hover:bg-white hover:text-black transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
                 setShowOptions(true);
@@ -188,7 +191,7 @@ export default function ProjectCard({ title, category, description, color = "#ff
           )
         ) : (
           <button
-            className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 opacity-50 cursor-not-allowed"
+            className="flex items-center justify-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-6 py-3 opacity-50 cursor-not-allowed"
             disabled
           >
             <span className="w-2 h-2 rounded-full bg-gray-500" />
