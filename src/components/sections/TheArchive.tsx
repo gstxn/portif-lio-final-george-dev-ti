@@ -11,6 +11,16 @@ const projects = [
     githubLink: "https://github.com/gstxn/fiscalmiddlewaredashboard",
     liveLink: "https://fiscalmiddlewaredashboard.vercel.app/",
     curiosity: "O pulso contínuo ao fundo representa o Worker em .NET, sempre 'vivo' e ouvindo. Ao passar o mouse, o feixe simula a jornada de uma mensagem no middleware: o tráfego caótico entra (vermelho), passa pelas regras de resiliência e sai validado no destino (verde)."
+  },
+  {
+    id: 2,
+    title: "Pipeline Reativo de Arquivos Massivos",
+    category: "Backend / Big Data / Arquitetura",
+    description: "Solução arquitetural corporativa para processamento assíncrono de big data (CSVs massivos). Utiliza .NET 8, PostgreSQL (Bulk Insert), React, SignalR e MinIO para garantir alto throughput e estabilidade de memória.",
+    color: "#512BD4", // .NET Purple
+    githubLink: "https://github.com/gstxn/Pipeline-de-Processamento-Reativo-de-Arquivos-Massivos",
+    liveLink: "",
+    curiosity: "A malha 3D pulsante ao fundo representa o oceano de dados brutos. Ao passar o mouse, o feixe de laser de alta velocidade simula a ação do IAsyncEnumerable no backend: a API atua como um scanner, varrendo e processando (slicing) os milhões de registros linha a linha sob demanda (PostgreSQL COPY). O arquivo gigantesco é consumido sem nunca estourar a memória (OutOfMemory)."
   }
 ];
 
