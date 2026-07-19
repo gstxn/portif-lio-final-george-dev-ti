@@ -182,43 +182,57 @@ export default function ProjectCard({ title, category, description, color = "#ff
         </p>
 
         {(githubLink || liveLink) ? (
-          showOptions ? (
-            <div className="flex gap-2 animate-in fade-in zoom-in duration-300">
-              {githubLink && (
-                <a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex justify-center items-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-3 hover:bg-white hover:text-black transition-colors"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  GitHub
-                </a>
-              )}
-              {liveLink && (
-                <a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex justify-center items-center gap-2 text-sm font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-3 hover:bg-white hover:text-black transition-colors"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Live Demo
-                </a>
-              )}
-            </div>
-          ) : (
-            <button
-              className="inline-flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 hover:bg-white hover:text-black transition-colors"
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowOptions(true);
-              }}
-            >
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              View Project
-            </button>
-          )
+          <AnimatePresence mode="wait">
+            {showOptions ? (
+              <motion.div 
+                key="options"
+                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="inline-flex gap-2"
+              >
+                {githubLink && (
+                  <a
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center items-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 hover:bg-white hover:text-black transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    GitHub
+                  </a>
+                )}
+                {liveLink && (
+                  <a
+                    href={liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center items-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 hover:bg-white hover:text-black transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </motion.div>
+            ) : (
+              <motion.button
+                key="main-button"
+                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="inline-flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 hover:bg-white hover:text-black transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowOptions(true);
+                }}
+              >
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                View Project
+              </motion.button>
+            )}
+          </AnimatePresence>
         ) : (
           <button
             className="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-white border border-[#444] px-4 py-2 opacity-50 cursor-not-allowed"
